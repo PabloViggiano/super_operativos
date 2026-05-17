@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Analítico de Ventas - Dangiola</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Glassmorphism Blanco Refinado */
+        .glass-button {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 12px 30px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(30, 58, 138, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .icon-container {
+            background: rgba(30, 58, 138, 0.04);
+            color: #1e3a8a; /* Azul Institucional */
+        }
+        
+        /* Animación suave para la transición de pantallas */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col bg-slate-50">
+
+    <div id="comingSoonScreen" class="flex-grow flex flex-col items-center justify-center p-6 fade-in">
+        <div class="glass-button p-12 md:p-20 rounded-[3rem] text-center max-w-3xl w-full flex flex-col items-center shadow-2xl border-white/80">
+            <img src="cd.png" alt="Dangiola S.A." class="w-32 md:w-48 h-auto mb-8" onerror="this.src='banner.png'">
+            
+            <h1 class="text-2xl md:text-4xl font-black text-blue-950 uppercase tracking-tighter leading-tight">
+                Business Intelligence Console
+            </h1>
+            
+            <div class="h-1.5 w-20 bg-blue-600 mx-auto mt-6 mb-8 rounded-full"></div>
+            
+            <div class="bg-blue-50 border border-blue-100 p-6 md:p-8 rounded-2xl w-full">
+                <p class="text-lg md:text-2xl font-bold text-blue-900 leading-relaxed">
+                    Esta web será presentada el <br>
+                    <span class="text-blue-600 font-black text-2xl md:text-3xl">Miércoles 18 de Mayo a las 11:30 hs.</span>
+                </p>
+            </div>
+            
+            <p class="text-xs font-bold text-slate-400 mt-10 uppercase tracking-widest">
+                Dangiola S.A. | Departamento de Analítica
+            </p>
+            
+            <div class="w-full max-w-xs bg-slate-200 rounded-full h-1.5 mt-8 overflow-hidden">
+                <div class="bg-blue-600 h-1.5 rounded-full animate-pulse w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent" class="hidden flex-col min-h-screen bg-white fade-in">
+        <header class="w-full bg-white shadow-sm">
+            <img src="banner.png" alt="Banner Institucional" class="w-full h-auto block">
+        </header>
+
+        <section class="container mx-auto px-4 mt-10 md:mt-12 text-center">
+            <h1 class="text-2xl md:text-4xl font-black text-blue-900 tracking-tighter uppercase">
+                Dashboard Analítico de Ventas
+            </h1>
+            <div class="h-1 w-16 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </section>
+
+        <main class="container mx-auto px-4 py-12 md:py-16 flex-grow">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <a href="mapa_clientes.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Mapa de Clientes</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Geolocalización territorial</p>
+                </a>
+
+                <a href="ventas_general.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Ventas General</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Métricas globales y m²</p>
+                </a>
+
+                <a href="ventas_vendedor.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Ventas Vendedor</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Ranking comercial</p>
+                </a>
+
+                <a href="historial_cliente.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Historial Cliente</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Fichas y frecuencia</p>
+                </a>
+
+                <a href="historial_productos.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Historial Productos</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Desglose Operativo</p>
+                </a>
+
+                <a href="proyeccion_inventario.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Proyección Inventario</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Demanda predictiva IA</p>
+                </a>
+
+                <a href="informes.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Informe Ejecutivo</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Reporte Gerencial IA</p>
+                </a>
+
+                <a href="asistente_ia.html" class="glass-button group flex flex-col items-center p-10 rounded-3xl">
+                    <div class="w-16 h-16 flex items-center justify-center icon-container rounded-2xl mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2 text-center">Asistente IA</h2>
+                    <p class="text-slate-500 text-center text-sm font-light uppercase tracking-tighter">Análisis predictivo</p>
+                </a>
+
+            </div>
+        </main>
+
+        <footer class="mt-auto py-8 text-center text-slate-400 text-[10px] tracking-[0.2em] border-t border-slate-50 uppercase">
+            <p>&copy; 2026 Dangiola S.A. | Inteligencia de Negocios</p>
+        </footer>
+    </div>
+
+    <script>
+        function checkLaunchDate() {
+            // Fecha objetivo: 18 de Mayo de 2026 a las 11:30:00 (Zona Horaria Buenos Aires / UTC-3)
+            const releaseDate = new Date("2026-05-18T11:30:00-03:00");
+            const now = new Date();
+
+            const comingSoonScreen = document.getElementById('comingSoonScreen');
+            const mainContent = document.getElementById('mainContent');
+
+            if (now >= releaseDate) {
+                // Ya pasó la fecha: Ocultar Holding Screen, Mostrar Dashboard
+                if (!comingSoonScreen.classList.contains('hidden')) {
+                    comingSoonScreen.classList.add('hidden');
+                    comingSoonScreen.classList.remove('flex');
+                    mainContent.classList.remove('hidden');
+                    mainContent.classList.add('flex');
+                }
+            } else {
+                // Aún no es la fecha: Mostrar Holding Screen, Ocultar Dashboard
+                if (comingSoonScreen.classList.contains('hidden')) {
+                    comingSoonScreen.classList.remove('hidden');
+                    comingSoonScreen.classList.add('flex');
+                    mainContent.classList.add('hidden');
+                    mainContent.classList.remove('flex');
+                }
+            }
+        }
+
+        // Chequear al cargar la página
+        checkLaunchDate();
+
+        // Chequear cada segundo por si la dejan abierta en una pestaña
+        setInterval(checkLaunchDate, 1000);
+    </script>
+</body>
+</html>
