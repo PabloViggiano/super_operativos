@@ -436,7 +436,7 @@
             // CARGA DE DATOS Y EVENTOS
             // -----------------------------------------------------
             Promise.all([
-                fetch('./1_poligonos_historicos_total.geojson').then(r => r.json()).catch(e => { console.log('Error poligonos:', e); return null; }),
+                fetch('./1_poligonos_historico_total.geojson').then(r => r.json()).catch(e => { console.log('Error poligonos:', e); return null; }),
                 fetch('./2_reportes_filtrados_total.geojson').then(r => r.json()).catch(e => { console.log('Error reportes:', e); return null; }),
                 fetch('./3_vecinos_filtrados_total.geojson').then(r => r.json()).catch(e => { console.log('Error vecinos:', e); return null; })
             ]).then(([poligonos, reportes, vecinos]) => {
